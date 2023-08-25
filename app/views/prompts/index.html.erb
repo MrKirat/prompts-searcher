@@ -1,11 +1,11 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <h1 class="my-4">Prompts</h1>
 
-<h1>Prompts</h1>
+  <div id="prompts">
+    <% @prompts.each do |prompt| %>
+      <%= render prompt %>
+    <% end %>
 
-<div id="prompts">
-  <% @prompts.each do |prompt| %>
-    <%= render prompt %>
-  <% end %>
-
-  <%== pagy_nav(@pagy) %>
+    <%== pagy_bootstrap_nav(@pagy) %>
+  </div>
 </div>
