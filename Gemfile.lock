@@ -79,6 +79,13 @@ GEM
       popper_js (>= 2.11.8, < 3)
       sassc-rails (>= 2.0.0)
     builder (3.2.4)
+    cairo (1.17.12)
+      native-package-installer (>= 1.0.3)
+      pkg-config (>= 1.2.2)
+      red-colors
+    cairo-gobject (4.2.0)
+      cairo (>= 1.16.2)
+      glib2 (= 4.2.0)
     capybara (3.39.2)
       addressable
       matrix
@@ -136,6 +143,8 @@ GEM
     faraday-retry (1.0.3)
     ffi (1.15.5)
     fiddle (1.1.1)
+    gdk_pixbuf2 (4.2.0)
+      gio2 (= 4.2.0)
     gio2 (4.2.0)
       fiddle
       gobject-introspection (= 4.2.0)
@@ -170,6 +179,7 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.5)
+    mini_portile2 (2.8.4)
     minitest (5.19.0)
     msgpack (1.7.2)
     multi_json (1.15.0)
@@ -185,7 +195,12 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
+    nokogiri (1.15.4)
+      mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
     nokogiri (1.15.4-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
     pagy (6.0.4)
     pg (1.5.3)
@@ -233,6 +248,8 @@ GEM
       gio2 (>= 3.5.0)
       native-package-installer
       pkg-config
+    red-colors (0.3.0)
+      matrix
     red-parquet (12.0.1)
       red-arrow (= 12.0.1)
     redis (4.8.1)
@@ -257,6 +274,9 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
+    rsvg2 (4.2.0)
+      cairo-gobject (= 4.2.0)
+      gdk_pixbuf2 (= 4.2.0)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     sassc (2.4.0)
@@ -309,7 +329,9 @@ GEM
     zeitwerk (2.6.11)
 
 PLATFORMS
+  ruby
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
@@ -318,6 +340,8 @@ DEPENDENCIES
   debug
   elasticsearch-model
   elasticsearch-rails
+  gio2
+  gobject-introspection
   importmap-rails
   jbuilder
   pagy (~> 6.0)
@@ -327,6 +351,7 @@ DEPENDENCIES
   red-parquet
   redis (~> 4.0)
   rspec-rails
+  rsvg2
   sassc-rails
   selenium-webdriver
   shoulda-matchers (~> 5.0)
