@@ -1,0 +1,27 @@
+<div class="container">
+  <h1 class="my-4">Prompt Search</h1>
+
+  <%= form_tag(search_prompts_path, method: :get, class: "row gy-2 gx-3 align-items-center") do %>
+    <div class="col-auto">
+      <label class="visually-hidden" for="prompt_search_input">Username</label>
+      <div class="input-group">
+        <%= search_field_tag(:query, params[:query], class: 'form-control', placeholder: "Search...", id: "prompt_search_input") %>
+      </div>
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+  <% end %>
+
+  <% if params[:query].present? && @search_items.blank? %>
+    <p>Nothing was found :(</p>
+  <% else %>
+    <div id="prompt_search_items">
+      <% @search_items.each do |search_item| %>
+        <%= render 'search_item', search_item: search_item %>
+      <% end %>
+
+      <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
+    </div>
+  <% end %>
+</div>

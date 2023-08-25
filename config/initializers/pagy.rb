@@ -84,7 +84,7 @@
 # Pagy::DEFAULT[:elasticsearch_rails_pagy_search] = :pagy_search
 # Default original :search method called internally to do the actual search
 # Pagy::DEFAULT[:elasticsearch_rails_search] = :search
-# require 'pagy/extras/elasticsearch_rails'
+require 'pagy/extras/elasticsearch_rails'
 
 # Headers extra: http response headers (and other helpers) useful for API pagination
 # See http://ddnexus.github.io/pagy/extras/headers

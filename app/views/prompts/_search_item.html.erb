@@ -1,0 +1,9 @@
+<div class="border border-secondary shadow rounded p-2 my-3" id="prompt_search_item_<%== search_item.id %>">
+  <p class="m-0">
+    <% if search_item.respond_to?(:highlight) %>
+      <%== search_item.highlight.content.join(' ') %>
+    <% else %>
+      <%== search_item.content %>
+    <% end %>
+   </p>
+</div>

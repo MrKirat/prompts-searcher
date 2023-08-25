@@ -1,11 +1,11 @@
 class PromptsController < ApplicationController
-  def index
-    @pagy, @prompts = pagy(Prompt.all)
+  def search
+    @pagy, @search_items = pagy_elasticsearch_rails(search_attributes)
   end
 
   private
 
-  def prompt_params
-    params.require(:prompt).permit(:content)
+  def search_attributes
+    ::Prompt.pagy_search(params[:query].to_s)
   end
 end
