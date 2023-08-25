@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Prompts</h1>
+
+<div id="prompts">
+  <% @prompts.each do |prompt| %>
+    <%= render prompt %>
+  <% end %>
+</div>
