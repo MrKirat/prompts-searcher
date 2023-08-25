@@ -49,7 +49,10 @@ gem "bootsnap", require: false
 gem 'pagy', '~> 6.0'
 
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem "sassc-rails"
+
+# Add some styles
+gem "bootstrap"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
