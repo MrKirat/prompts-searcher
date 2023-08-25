@@ -1,6 +1,6 @@
 class PromptsController < ApplicationController
   def index
-    @prompts = Prompt.all
+    @pagy, @prompts = pagy(Prompt.all)
   end
 
   private
